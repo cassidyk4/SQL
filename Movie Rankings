@@ -1,0 +1,38 @@
+CREATE TABLE topmovies (id INTEGER PRIMARY KEY AUTOINCREMENT, Rank INTEGER, Title TEXT, Studio TEXT, Year INTEGER);
+
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (1,'Avatar','Fox',2009);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (2,'Titanic','Par.',1997);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (3,'Marvel''s The Avengers','BV',2012);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (8,'Transformers: Dark of the Moon', 'Fox', 2011);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (9,'The Lord of the Rings: The Return of the King', 'Fox', 2003);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (10,'Skyfall','Sony',2012); INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (74,'Mission: Impossible - Ghost Protocol','Par.',2011);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (75,'The Hunger Games','LGF',2012);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (76,'Forrest Gump','Par.',1994);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (77,'The Sixth Sense','BV',1999);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (78,'Interstellar','Par.',2014);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (79,'Man of Steel','WB',2013);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (80,'Kung Fu Panda 2','P/DW',2011);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (81,'Ice Age: The Meltdown','Fox',2006);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (82,'Pirates of the Caribbean: The Curse of the Black Pearl','BV',2003);
+INSERT INTO topmovies(Rank,Title,Studio,Year) VALUES (83,'Big Hero 6','BV',2014);
+
+
+SELECT AVG(Rank) FROM topmovies;
+SELECT MAX(Rank) FROM topmovies;
+SELECT MIN(Rank) FROM topmovies;
+
+SELECT Studio, AVG(Rank) FROM topmovies GROUP BY Studio HAVING Rank > 3;
+
+SELECT Year, MAX(Rank) FROM topmovies GROUP BY Year HAVING Rank >0;
+
+SELECT Studio, MIN(Rank) FROM topmovies GROUP BY Studio HAVING Rank >0;
+
+SELECT Title, Rank, 
+    CASE 
+    WHEN Rank < 5 THEN "Below Average"
+    WHEN Rank > 5 THEN "Above Average"
+    END as "ranking_comparison" from topmovies GROUP BY ranking_comparison;
+    
+SELECT COUNT(*) FROM topmovies WHERE Rank > 5 AND Studio = "Fox";
+
+SELECT Title FROM topmovies WHERE Rank < 5 AND Studio = "Fox";
