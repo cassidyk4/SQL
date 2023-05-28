@@ -1,0 +1,21 @@
+CREATE TABLE breakfast_store (id INTEGER PRIMARY KEY, item TEXT, price INTEGER, quantity INTEGER, calories INTEGER);
+
+INSERT INTO breakfast_store VALUES (1, "Hot coffee", 2, 1, 25);
+INSERT INTO breakfast_store VALUES (2, "Iced Coffee", 3, 1, 100);
+INSERT INTO breakfast_store VALUES (3, "Blueberry Muffin", 4, 1, 350);
+INSERT INTO breakfast_store VALUES (4, "Chocolate Muffin", 4, 1, 400);
+INSERT INTO breakfast_store VALUES (5, "Plain Bagel", 3, 1, 300);
+INSERT INTO breakfast_store VALUES (6, "Dozen Plain Bagels", 10, 12, 3600);
+INSERT INTO breakfast_store VALUES (7, "Everything Bagel", 4, 1, 350);
+INSERT INTO breakfast_store VALUES (8, "Dozen Everything Bagels", 12, 12, 4200);
+INSERT INTO breakfast_store VALUES (9, "Cinnamon Raisin Bagel", 4, 1, 400);
+INSERT INTO breakfast_store VALUES (10, "Dozen Cinnamon Raisin Bagels", 14, 12, 4800);
+INSERT INTO breakfast_store VALUES (11, "Breakfast Sandwich", 4, 1, 450);
+INSERT INTO breakfast_store VALUES (12, "Avocado Toast", 5, 1, 400);
+INSERT INTO breakfast_store VALUES (13, "Yogurt Parfait", 4, 1, 350);
+INSERT INTO breakfast_store VALUES (14, "Cinnamon Roll", 4, 1, 500);
+INSERT INTO breakfast_store VALUES (15, "Orange Juice", 2, 1, 200);
+SELECT * FROM breakfast_store;
+
+SELECT * FROM breakfast_store GROUP BY price;
+SELECT MAX(calories) FROM breakfast_store;
